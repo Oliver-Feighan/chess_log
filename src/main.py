@@ -38,6 +38,7 @@ def main():
 
     print("%s wins in %s moves" % (player, str(move)))
 
+    this_game.conn.close()
 
 if __name__ == '__main__':
     main()
