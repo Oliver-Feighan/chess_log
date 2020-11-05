@@ -29,5 +29,3 @@ class Board():
     def check_for_check(self, move : str):
         try:
 
-        else:
-
