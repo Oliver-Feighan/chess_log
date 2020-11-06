@@ -4,7 +4,7 @@ import src.game.board as game
 def get_input(turn : int, player : str, board : game.Board):
     m_c = input("Turn: %s, Player: %s -- move and comment: " % (turn, player)).split(" ")
 
-    if len(m_c) != 2 or len(m_c) != 1:
+    if len(m_c) != 2 and len(m_c) != 1:
         print("only input move and comment, like 'b4 !!'")
         return get_input(turn, player, board)
 
