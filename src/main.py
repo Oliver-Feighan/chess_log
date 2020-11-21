@@ -8,8 +8,7 @@ def get_input(turn : int, player : str, board : game.Board):
         print("only input move and comment, like 'b4 !!'")
         return get_input(turn, player, board)
 
-    move, comment = m_c
-
+    move, *comment = m_c
 
     if not board.check_legality(move):
         print("this is not a legal move")
@@ -29,6 +28,10 @@ def get_input(turn : int, player : str, board : game.Board):
         print("move is now %s" % move)
         return (move, comment)
 
+    if(comment):
+        return (move, comment)
+    else:
+        return (move, "-")
 
 def print_title():
     print("#" * 15)
@@ -40,7 +43,7 @@ def print_title():
 def main():
     print_title()
 
-    game_name = input("name of game?")
+    game_name = input("name of game? ")
 
     # open connection to recording, and make a board
     this_game = logs.GameLog(game_name)
@@ -52,7 +55,7 @@ def main():
     players = ["black", "white"]
     player = players[turn]
     while(game_on):
-        [m, c] = get_input(turn, player, this_board)
+        m, c = get_input(turn, player, this_board)
 
         this_game.add_move(player, m, c)
 
