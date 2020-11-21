@@ -8,7 +8,11 @@ class GameLog:
     >>> test_log = GameLog("test_table")
 
     >>> time.sleep(1)
-    >>> test_log.add_move("b4")
+    >>> test_log.add_move("white", "a4")
+
+    >>> test_log.drop_game("test_table_0")
+
+    >>> test_log.conn.close()
 
     '''
 
@@ -68,7 +72,6 @@ class GameLog:
         self.game_name = self.make_new_table(table_name)
 
 
-
     def add_move(self, player, move_string, comment_string = "-",):
         allowed_comments = ["-", "!", "!!", "?", "??", "?!", "!?"]
         assert(comment_string in allowed_comments)
@@ -82,5 +85,16 @@ class GameLog:
         command = "INSERT INTO %s VALUES (?, ?, ?, ?)" % self.game_name
 
         c.execute(command, parameters)
+
+        self.conn.commit()
+
+
+    def drop_game(self, name : str):
+
+        c = self.conn.cursor()
+
+        command = "DROP TABLE %s" % name
+
+        c.execute(command)
 
         self.conn.commit()
