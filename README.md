@@ -1,3 +1,5 @@
+[![Doctests Actions Status](https://github.com/Oliver-Feighan/chess_log/workflows/chess_log/badge.svg)](https://github.com/Oliver-Feighan/chess_log/actions)
+
 # chess_log
 
 CLI for adding logs of chess games into an sqlite database. Given enough games, 
