@@ -1,4 +1,4 @@
-[![Doctests Actions Status](https://github.com/Oliver-Feighan/chess_log/workflows/doctests/badge.svg)](https://github.com/Oliver-Feighan/chess_log/actions)
+[![doctests Actions Status](https://github.com/Oliver-Feighan/chess_log/workflows/doctests/badge.svg)](https://github.com/Oliver-Feighan/chess_log/actions)
 
 # chess_log
 
