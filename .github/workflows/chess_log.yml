@@ -34,4 +34,4 @@ jobs:
     - name: Test doctests with pytest
       run: |
         python src/recording/recording.py -v
-        python src/board/board.py -v
+        python src/game/board.py -v
