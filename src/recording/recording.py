@@ -1,3 +1,8 @@
+"""
+GameLog is the step between game moves and comments and the
+sqlite database. Should sanitize inputs, open connections etc.
+"""
+
 import datetime
 import sqlite3
 import os
@@ -98,3 +103,8 @@ class GameLog:
         c.execute(command)
 
         self.conn.commit()
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

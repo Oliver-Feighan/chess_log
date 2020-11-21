@@ -1,7 +1,13 @@
+"""
+class Board() is basically a wrapper for chess module functions.
+Can check the legality of moves, as well as keeping the positions
+of pieces on the board.
+"""
+
 import chess
 
 class Board():
-    '''
+    """
     wrapper for python-chess API. Needed to validate chess moves, otherwise
     anything could be written in. Needs to check for checks and mates.
     >>> board = Board()
@@ -46,7 +52,7 @@ class Board():
     >>> board.check_for_mate("Qxf7++")
     True
 
-    '''
+    """
 
     def __init__(self):
         self.board = chess.Board()
@@ -82,4 +88,7 @@ class Board():
 
 
 
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
 
